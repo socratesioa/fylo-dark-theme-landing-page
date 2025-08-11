@@ -1,0 +1,57 @@
+@use '../abstracts' as *;
+
+.hero-img {
+    display: block;
+    width: calc(100% - 48px);
+    margin: 0 auto;
+    @include respond(small, min) {
+        width: calc(100% - 108px);
+    }
+    @include respond(large, min) {
+        max-width: 720px;
+    }
+}
+
+.logo-header {
+    display: block;
+    width: 80px;
+    @include respond(small, min) {
+        width: 138px;
+    }
+}
+
+.feature-icon {
+    display: block;
+    scale: 0.75;
+    object-fit: contain;
+    @include respond(small, min) {
+        scale: 1;
+    }
+}
+
+.stay-productive {
+    display: block;
+    width: 100%;
+    @include respond(large, min) {
+        max-width: 615px;
+    }
+}
+
+.arrow {
+    display: block;
+}
+
+.profile {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.logo-footer {
+    display: block;
+    width: 108px;
+    @include respond(small, min) {
+        grid-area: logo;
+    }
+}

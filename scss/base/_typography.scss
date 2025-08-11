@@ -1,0 +1,149 @@
+@use '../abstracts' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+$font-body: "Open Sans", sans-serif;
+$font-heading: "Raleway", sans-serif;
+
+$text-preset-1: (
+    family: $font-heading,
+    size: 40px,
+    lineHeight: 1.2,
+    letterSpacing: 0px,
+    weight: 700,
+);
+
+$text-preset-2: (
+    family: $font-heading,
+    size: 20px,
+    lineHeight: 1.2,
+    letterSpacing: 0px,
+    weight: 700,
+);
+
+$text-preset-3: (
+    family: $font-heading,
+    size: 16px,
+    lineHeight: 1.2,
+    letterSpacing: 0px,
+    weight: 700,
+);
+
+$text-preset-3-regular: (
+    family: $font-heading,
+    size: 16px,
+    lineHeight: 1.2,
+    letterSpacing: 0px,
+    weight: 400,
+);
+
+$text-preset-4: (
+    family: $font-heading,
+    size: 14px,
+    lineHeight: 1.2,
+    letterSpacing: 0px,
+    weight: 700,
+);
+
+$text-preset-5: (
+    family: $font-heading,
+    size: 12px,
+    lineHeight: 1.2,
+    letterSpacing: 0px,
+    weight: 400,
+);
+
+$text-preset-6: (
+    family: $font-body,
+    size: 20px,
+    lineHeight: 1.5,
+    letterSpacing: 0px,
+    weight: 400,
+);
+
+$text-preset-7-bold: (
+    family: $font-body,
+    size: 16px,
+    lineHeight: 1.5,
+    letterSpacing: 0px,
+    weight: 700,
+);
+
+$text-preset-7-regular: (
+    family: $font-body,
+    size: 16px,
+    lineHeight: 1.5,
+    letterSpacing: 0px,
+    weight: 400,
+);
+
+$text-preset-8: (
+    family: $font-body,
+    size: 14px,
+    lineHeight: 1.5,
+    letterSpacing: 0px,
+    weight: 400,
+);
+
+$text-preset-9-bold: (
+    family: $font-body,
+    size: 10px,
+    lineHeight: 1.5,
+    letterSpacing: 0px,
+    weight: 700,
+);
+
+$text-preset-9-regular: (
+    family: $font-body,
+    size: 10px,
+    lineHeight: 1.8,
+    letterSpacing: 0.5px,
+    weight: 400,
+);
+
+$text-preset-10: (
+    family: $font-body,
+    size: 7px,
+    lineHeight: 1.5,
+    letterSpacing: 0.5px,
+    weight: 400,
+);
+
+body {
+    font-family: $font-body;
+    color: $clr-body-text;
+}
+
+h1 {
+    @include text-preset($text-preset-2);
+    text-align: center;
+    @include respond(small, min) {
+      @include text-preset($text-preset-1);  
+    }
+}
+
+h2 {
+    @include text-preset($text-preset-2);
+}
+
+h3 {
+    @include text-preset($text-preset-3);
+    @include respond(small, min) {
+        @include text-preset($text-preset-1);
+        margin-bottom: 24px;
+    }
+}
+
+h3 span {
+    @include respond(large, min) {
+        display: block;
+    }
+}
+
+h4 {
+    @include text-preset($text-preset-2);
+    text-align: center;
+    @include respond(xl, min) {
+        @include text-preset($text-preset-1);
+    }
+}

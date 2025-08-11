@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+@use '../base/typography' as typo;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $clr-body-bg;
+}
+
+.site-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    box-shadow: -2px 0 6px rgba(0,0,0,0.1), 2px 0 6px rgba(0,0,0,0.1);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

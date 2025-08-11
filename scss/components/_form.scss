@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+@use '../base/typography' as typo;
+
+form {
+    display: grid;
+    gap: 24px;
+    width: 100%;
+    @include respond(xl, min) {
+        grid-template-columns: 480px auto;
+    }
+}
+
+input {
+    border: none;
+    border-radius: 24px;
+    height: 48px;
+    font-family: inherit;
+    text-align: center;
+    padding: 0 32px;
+    @include text-preset(typo.$text-preset-8);
+    color: $clr-footer-bg;
+    @include respond(small, min) {
+        text-align: left;
+    }
+}
+
+input::placeholder {
+    color: $clr-placeholder;
+}
+
+.input-group {
+    display: grid;
+    gap: 8px;
+}
+
+.error-message {
+    color: $clr-error;
+    @include text-preset(typo.$text-preset-9-bold);
+    margin-left: 32px;
+}

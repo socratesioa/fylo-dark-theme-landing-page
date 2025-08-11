@@ -1,0 +1,184 @@
+@use '../abstracts' as *;
+@use '../base/typography' as typo;
+
+.footer-container {
+    background-color: $clr-footer-bg;
+    padding: 260px 28px 48px 28px;
+    position: relative;
+    @include respond(small, min) {
+        padding: 257px 56px 64px 56px;
+
+    }
+    @include respond(xl, min) {
+        padding: 162px 0 56px 0;
+    }
+}
+
+.footer-content {
+    @include respond(small, min) {
+        display: grid;
+    grid-template-columns: 1fr 185px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "logo logo"
+    "contact contact"
+    "navigation social";
+    row-gap: 56px;
+    }  
+    @include respond(xl, min) {
+        max-width: 1240px;
+        margin: 0 auto;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "logo logo logo"
+        "contact navigation social";
+        row-gap: 48px;
+        column-gap: clamp(24px, 10vw, 126px);
+    }
+}
+
+.cta {
+    width: calc(100% - 40px);
+    background-color: $clr-cta-bg;
+    padding: 40px 24px;
+    border-radius: 9px;
+    box-shadow: 5px 5px 8px 0 hsla(0, 0%, 0%, 0.25);
+    display: grid;
+    gap: 32px;
+    @include text-preset(typo.$text-preset-8);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include respond(small, min) {
+        width: calc(100% - 236px);
+        padding: 48px 40px;
+    }
+    @include respond(xl, min) {
+        width: 100%;
+        max-width: 863px;
+        padding: 48px 80px;
+    }
+}
+
+.cta-text {
+    display: grid;
+    gap: 16px;
+    text-align: center;
+    @include respond(small, min) {
+        gap: 24px;
+    }
+    @include respond(xl, min) {
+        max-width: 673px;
+        margin: 0 auto;
+        gap: 8px;
+    }
+}
+
+.contact-wrapper {
+    display: grid;
+    gap: 16px;
+    margin-top: 40px;
+    margin-bottom: 56px;
+    @include respond(small, min) {
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: "location phone"
+        "location email";
+        row-gap: 24px;
+        margin-top: 0;
+        margin-bottom: 0;
+        grid-area: contact;
+    }
+    @include respond(xl, min) {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        gap: 0;
+        column-gap: 80px;
+        align-self: start;
+    }
+}
+
+.location {
+    @include respond(small, min) {
+        grid-area: location;
+        max-width: 380px;
+    }
+}
+
+.phone {
+    align-items: center;
+    @include respond(small, min) {
+        grid-area: phone;
+    }
+}
+
+.email {
+    align-items: center;
+    @include respond(small, min) {
+        grid-area: email;
+    }
+}
+
+.contact-row {
+    display: grid;
+    grid-template-columns: 24px auto;
+    gap: 16px;
+    @include text-preset(typo.$text-preset-7-regular);
+}
+
+.footer-navigation {
+    display: grid;
+    gap: 40px;
+    @include respond(small, min) {
+        max-width: 363px;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(3, auto);
+        row-gap: 16px;
+        column-gap: clamp(16px, 9vw, 80px);
+        grid-area: navigation;
+    }
+    @include respond(xl, min) {
+        max-width: unset;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: unset;
+        gap: 80px;
+    }
+}
+
+@include respond(small, min) {
+  .footer-menu li:nth-child(1) { grid-column: 1; grid-row: 1; }
+  .footer-menu li:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .footer-menu li:nth-child(3) { grid-column: 1; grid-row: 3; }
+  .footer-menu li:nth-child(4) { grid-column: 2; grid-row: 1; }
+  .legal-menu li:nth-child(1) { grid-column: 2; grid-row: 2; }
+  .legal-menu li:nth-child(2) { grid-column: 3; grid-row: 1; }
+  .legal-menu li:nth-child(3) { grid-column: 3; grid-row: 2; }
+}
+
+.social-wrapper {
+    @include respond(small, min) {
+        grid-area: social;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    @include respond(xl, min) {
+        justify-content: flex-end;
+        width: fit-content;
+    }
+}
+
+.social {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+    margin-top: 48px;
+    @include respond(small, min) {
+        gap: 16px;
+        margin-top: 0;
+        justify-content: unset;
+        align-items: unset;
+    }
+}

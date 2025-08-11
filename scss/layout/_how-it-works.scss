@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+@use '../base/typography' as typo;
+
+#how-it-works {
+    margin-bottom: 150px;
+    padding: 0 24px;
+    display: grid;
+    gap: 48px;
+    @include respond(small, min) {
+        margin-bottom: 107px;
+        padding: 0 54px;
+        gap: 72px;
+    }
+    @include respond(large, min) {
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+        align-items: center;
+        max-width: 1188px;
+        margin: 0 auto;
+        margin-bottom: 155px;
+    }
+}
+
+.stay-productive-text {
+    display: grid;
+    gap: 16px;
+    @include respond(small, min) {
+        gap: 0;
+    }
+}
+
+.stay-productive-text p {
+    @include text-preset(typo.$text-preset-8);
+    @include respond(small, min) {
+        @include text-preset(typo.$text-preset-7-regular);
+        margin-bottom: 16px;
+    }
+}

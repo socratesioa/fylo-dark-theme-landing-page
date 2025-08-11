@@ -1,0 +1,40 @@
+@use '../abstracts' as *;
+@use '../base/typography' as typo;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5); /* semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* high enough to be on top */
+}
+
+.modal-content {
+    width: calc(100% - 40px);
+    background-color: $clr-cta-bg;
+    padding: 40px 24px 117px 24px;
+    border-radius: 9px;
+    box-shadow: 5px 5px 8px 0 hsla(0, 0%, 0%, 0.25);
+    display: grid;
+    justify-items: center;
+    gap: 32px;
+    @include text-preset(typo.$text-preset-8);
+    @include respond(small, min) {
+        width: calc(100% - 236px);
+        padding: 48px 40px 125px 40px;
+    }
+    @include respond(xl, min) {
+        width: 100%;
+        max-width: 863px;
+        padding: 48px 80px 125px 80px;
+    }
+}
+
+.modal[hidden] {
+  display: none;
+}

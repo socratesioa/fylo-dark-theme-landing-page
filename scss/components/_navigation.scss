@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+@use '../base/typography' as typo;
+
+.main-navigation {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    @include respond(small, min) {
+        gap: 48px;
+    }
+    @include respond(large, min) {
+        gap: 56px;
+    }
+}
+
+.main-link {
+    @include text-preset(typo.$text-preset-5);
+    text-decoration: none;
+    color: $clr-body-text;
+    @include text-preset(typo.$text-preset-3-regular);
+}
+
+.main-link:hover {
+    font-weight: 700;
+    text-decoration: underline;
+    @include text-preset(typo.$text-preset-3);
+}
+
+.footer-menu,
+.legal-menu {
+    list-style: none;
+    display: grid;
+    gap: 16px;
+}
+
+.footer-navigation nav,
+.footer-navigation ul {
+    @include respond(small, min) {
+        display: contents;
+    }
+    @include respond(xl, min) {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+.footer-nav-link {
+    color: $clr-body-text;
+    text-decoration: none;
+    @include text-preset(typo.$text-preset-7-regular);
+}
+
+.footer-nav-link:hover {
+    @include text-preset(typo.$text-preset-7-bold);
+}

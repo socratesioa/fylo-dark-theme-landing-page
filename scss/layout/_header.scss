@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+@use '../base/typography' as typo;
+
+header {
+    background-color: $clr-header-bg;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 48px 24px;
+    @include respond(small, min) {
+        padding: 80px 54px 100px 54px;
+    }
+    @include respond(large, min) {
+        padding: 80px 80px 64px 80px;
+    }
+}

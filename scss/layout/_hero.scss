@@ -1,0 +1,74 @@
+@use '../abstracts' as *;
+@use '../base/typography' as typo;
+
+#hero {
+    margin-bottom: 140px;
+    @include respond(small, min) {
+        margin-bottom: 150px;
+    }
+    @include respond(large, min) {
+        margin-bottom: 0;
+    }
+}
+
+.hero-img-wrapper {
+    background-color: $clr-header-bg;
+    background-image: url("../images/bg-curvy-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: center calc(100% + 11px);
+    background-size: 100% 141px;
+    padding-bottom: 83px;
+    @include respond(small, min) {
+        background-image: none;
+        padding-bottom: 64px;
+    }
+    @include respond(large, min) {
+        padding-bottom: 56px;
+    }
+}
+
+.hero-text-wrapper {
+    @include respond(small, min) {
+        background-color: $clr-header-bg;
+        background-image: url("../images/bg-curvy-desktop.svg");
+        background-repeat: no-repeat;
+        background-position: center calc(100% + 187px);
+        background-size: 1900px 449px;
+    }
+    @include respond(large, min) {
+        background-size: 2100px auto;
+        background-position: center calc(100% + 200px);
+    }
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px;
+    text-align: center;
+    margin-top: -11px;
+    @include respond(small, min) {
+        gap: 48px;
+        padding: 0 54px;
+    }
+    @include respond(large, min) {
+        max-width: 734px;
+        margin: 0 auto;
+        margin-top: 0;
+        gap: 32px;
+        padding-bottom: 150px;
+    }
+}
+
+.hero-text p {
+    @include text-preset(typo.$text-preset-8);
+    @include respond(small, min) {
+        @include text-preset(typo.$text-preset-6);
+    }
+    @include respond(large, min) {
+        margin-top: 8px;
+    }
+}
